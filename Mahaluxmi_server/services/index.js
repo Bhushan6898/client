@@ -6,9 +6,6 @@ import dotenv from 'dotenv';
 import { uploadImage } from '../middleware/multer/index.js';
 dotenv.config();
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
 
 
 export const registetration = async (req, res) => {
@@ -139,29 +136,5 @@ export const GetProduct = async (req, res) => {
   } catch (error) {
     console.error('Error during data retrieval:', error);
     return res.status(500).json({ message: 'Internal server error' });
-  }
-};
-export const Genrate = async (req, res) => {
-  try {
-    console.log(req.body);
-    const prompt="hello"
-   // const { prompt } = req.body;
-    if (!prompt) {
-      return res.status(400).json({ error: 'Prompt is required' });
-    }
-
-    // Generate a response from OpenAI
-    const response = await openai.completions.create({
-      model: 'gpt-4-turbo', // You can choose different models
-      prompt: prompt,
-      max_tokens: 150,
-    });
-
-console.log(response);
-
-    res.json({ text: response.data.choices[0].text });
-  } catch (error) {
-    console.error('Error generating text:', error);
-    res.status(500).json({ error: 'An error occurred while generating text' });
   }
 };
