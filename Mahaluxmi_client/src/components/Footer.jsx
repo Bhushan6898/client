@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="h6">Mahaluxmi Hardwere</div>
             <hr />
             <p>
-            Welcome to Mahaluxmi Hardware Shop, your one-stop destination for all your hardware needs. We offer a wide range of high-quality tools, building materials, and home improvement products at competitive prices.
+              Welcome to Mahaluxmi Hardware Shop, your one-stop destination for all your hardware needs. We offer a wide range of high-quality tools, building materials, and home improvement products at competitive prices.
             </p>
           </div>
           <div className="col-md-3 py-3">
@@ -36,46 +36,55 @@ const Footer = () => {
             <ul className="list-group list-group-flush">
               <li className="list-group-item bg-dark text-white border-light">
                 <Link
-                  to="/"
+                  to="/tools"
                   className="text-decoration-none text-white stretched-link"
                 >
-                  Electronics
+                  Tools
                 </Link>
               </li>
               <li className="list-group-item bg-dark text-white border-light">
                 <Link
-                  to="/"
+                  to="/fasteners"
                   className="text-decoration-none text-white stretched-link"
                 >
-                  Mobiles
+                  Fasteners
                 </Link>
               </li>
               <li className="list-group-item bg-dark text-white border-light">
                 <Link
-                  to="/"
+                  to="/paint"
                   className="text-decoration-none text-white stretched-link"
                 >
-                  Car & bike
+                  Paints & Coatings
                 </Link>
               </li>
               <li className="list-group-item bg-dark text-white border-light">
                 <Link
-                  to="/"
+                  to="/lumber"
                   className="text-decoration-none text-white stretched-link"
                 >
-                  Super Market
+                  Lumber & Building Materials
                 </Link>
               </li>
               <li className="list-group-item bg-dark text-white border-light">
                 <Link
-                  to="/"
+                  to="/plumbing"
                   className="text-decoration-none text-white stretched-link"
                 >
-                  Travel Cards
+                  Plumbing Supplies
+                </Link>
+              </li>
+              <li className="list-group-item bg-dark text-white border-light">
+                <Link
+                  to="/electrical"
+                  className="text-decoration-none text-white stretched-link"
+                >
+                  Electrical Supplies
                 </Link>
               </li>
             </ul>
           </div>
+
           <div className="col-md-3 py-3">
             <div className="h6">Policy</div>
             <hr />
@@ -132,7 +141,7 @@ const Footer = () => {
               <br />
               Kalmadu Pin Code is 424106.
               <br />
-              <abbr title="Phone">Phone:</abbr>9730183353  
+              <abbr title="Phone">Phone:</abbr>9730183353
             </address>
             <div className="h6">Customer Care</div>
             <hr />
@@ -160,8 +169,8 @@ const Footer = () => {
             </Link>
           </div>
           <div className="col-md-3 py-2">
-            © 2016-{new Date().getFullYear()} malaluxmi hardwere.com 
-           
+            © 2016-{new Date().getFullYear()} malaluxmi hardwere.com
+
           </div>
           <div className="col-md-3 py-2 bg-white">
             <img

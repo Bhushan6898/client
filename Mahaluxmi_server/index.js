@@ -2,28 +2,43 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import routes from './routes/index.js';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import path, { dirname, join } from 'path';
+import cookieParser from 'cookie-parser';
+import userroutes from './routes/user/index.js';
+import productroutes from './routes/product/index.js';
+import routes from './routes/auth/index.js';
+import billroutes from './routes/bill/index.js';
 
 dotenv.config();
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Helper function to get __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+app.use(cors({
+  origin: [
+    'https://mahaluxmi-hardwear.netlify.app', // Your Netlify site
+    'http://localhost:3000'  // Localhost for development
+  ],
+  credentials: true  
+}));
+
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // Serve static files from the "uploads" directory
 
 app.use("/mahaluxmi_hardware", express.static(path.join(__dirname, "mahaluxmi_hardware")));
 // Use external routes
 app.use("/", routes);
+app.use("/user", userroutes);
+app.use("/bill", billroutes);
+app.use("/product", productroutes);
 
 const DB_URI = process.env.DB_URI;
 

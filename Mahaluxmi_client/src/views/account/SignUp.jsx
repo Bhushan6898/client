@@ -1,6 +1,7 @@
 import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import backgroundImg from '../../register.jpg';
 const SingUpForm = lazy(() => import("../../components/account/SignUpForm"));
 
 const SignUpView = () => {
@@ -10,19 +11,18 @@ const SignUpView = () => {
   };
   const { t } = useTranslation();
   return (
-    <div className="container my-3">
-      <div className="row border">
-        <div className="col-md-6 bg-light bg-gradient p-3 d-none d-md-block">
+    <div className="container my-3"  style={{
+      backgroundImage: `url(${backgroundImg})`,
+      backgroundSize: "cover",
+    
+      backgroundRepeat: "no-repeat",
+    }}>
+      <div className="row ">
+        <div className="col-md-6 p-3 d-none d-md-block">
+         
           <Link to="/">
             <img
-              src="../../images/banner/Dell.webp"
-              alt="..."
-              className="img-fluid"
-            />
-          </Link>
-          <Link to="/">
-            <img
-              src="../../images/banner/Laptops.webp"
+             src="../../images/signup/regist2.png"
               alt="..."
               className="img-fluid"
             />

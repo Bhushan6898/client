@@ -12,12 +12,14 @@ import { ToastContainer } from "react-toastify";
 import './i18n'; // Import i18n configuration
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
+import store from './store/storage'; 
 const persistedState = loadState();
-const store = createStore(rootReducer, persistedState);
 
-store.subscribe(() => {
-  saveState(store);
-});
+// const store = createStore(rootReducer, persistedState);
+
+// store.subscribe(() => {
+//   saveState(store);
+// });
 
 
 

@@ -10,9 +10,9 @@ const TopMenu = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-0 " >
     <div className="container-fluid">
-      <Link className="navbar-brand" to="/home">
+      <Link className="navbar-brand" style={{ fontWeight: "bold", color: "orange" }} to="/">
         {t('appTitle')}
       </Link>
       <button
@@ -40,7 +40,7 @@ const TopMenu = () => {
             </button>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
               <li>
-                <Link className="dropdown-item" to="/">
+                <Link className="dropdown-item" to="/signin">
                   {t('signIn')}
                 </Link>
               </li>
@@ -49,7 +49,7 @@ const TopMenu = () => {
                   {t('signUp')}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
@@ -71,7 +71,7 @@ const TopMenu = () => {
                 <Link className="dropdown-item" to="/blog/detail">
                   {t('blogDetail')}
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </li>
           <li className="nav-item">
@@ -79,16 +79,12 @@ const TopMenu = () => {
               {t('buildingMaterial')}
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/category">
-              {t('plumbing')}
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/category">
+         
+          {/* <li className="nav-item">
+            <Link className="nav-link" to="/electric">
               {t('electronics')}
             </Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link className="nav-link" to="/addproduct">
               {t('addProduct')}
@@ -96,11 +92,26 @@ const TopMenu = () => {
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/documentation">
-              {t('View')}
+              {t('Data Management')}
             </Link>
           </li>
-          {/* Move language selector to the last item */}
-          <li className="nav-item ml-auto" style={{ marginLeft: '250px' }}>
+          <li className="nav-item">
+            <Link className="nav-link" to="/billing">
+              {t('billing')}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/billingdata">
+              {t('billingdata')}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/dashbord">
+             Dashbord
+            </Link>
+          </li>
+          {/* Move language selector to the last item
+          <li className="nav-item ml-auto" style={{ marginLeft: '100px' }}>
         <select
           className="form-select"
           onChange={(e) => changeLanguage(e.target.value)}
@@ -110,7 +121,7 @@ const TopMenu = () => {
           <option value="hi">Hindi</option>
           <option value="mr">Marathi</option>
         </select>
-      </li>
+      </li> */}
         </ul>
       </div>
     </div>
